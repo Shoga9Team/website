@@ -41,6 +41,8 @@
             <!--<fetch-container href="./Pages/logo/home.html" iframeHeight="100%" lazy="true"></fetch-container>-->
             <div>
                 <img onclick="(() => {
+                    if (Number(self.localStorage.getItem('logo')) > 0) location.href = './Pages/logo/home.html'
+                    self.localStorage.setItem('logo', Number(self.localStorage.getItem('logo')) + 1)
                     const fetchContainer = document.createElement('fetch-container')
                     fetchContainer.setAttribute('href', './Pages/logo/home.html')
                     fetchContainer.setAttribute('iframeHeight', '100%')
